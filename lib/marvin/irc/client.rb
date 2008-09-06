@@ -101,7 +101,7 @@ module Marvin::IRC
       end
       if configuration.logger.blank?
         require 'logger'
-        configuration.logger = Marvin::Logger.logger
+        configuration.logger = Logger.new(STDOUT)
       end
       self.logger = self.configuration.logger
       self.is_setup = true
